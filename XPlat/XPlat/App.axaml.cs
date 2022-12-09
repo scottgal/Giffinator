@@ -1,6 +1,12 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ReactiveUI;
+using Splat;
+using Splat.Microsoft.Extensions.DependencyInjection;
 using XPlat.ViewModels;
 using XPlat.Views;
 
@@ -13,24 +19,39 @@ namespace XPlat
             AvaloniaXamlLoader.Load(this);
         }
 
-        public override void OnFrameworkInitializationCompleted()
-        {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainViewModel()
-                };
-            }
-            else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
-            {
-                singleViewPlatform.MainView = new MainView
-                {
-                    DataContext = new MainViewModel()
-                };
-            }
+    
+            public IServiceProvider Container { get; private set; }
+            public IHost host { get; set; }
+   
 
-            base.OnFrameworkInitializationCompleted();
-        }
+            public override void OnFrameworkInitializationCompleted()
+            {
+                host = Host.CreateDefaultBuilder()
+                    .ConfigureServices((_, services) =>
+                    {
+                        services.UseMicrosoftDependencyResolver();
+                        var resolver = Locator.CurrentMutable;
+                        resolver.InitializeSplat();
+                        resolver.InitializeReactiveUI();
+
+                        services.AddHttpClient();
+         
+
+                        services.AddTransient<MainWindow>();
+      
+                    })
+                    .Build();
+                Container = host.Services;
+                Container.UseMicrosoftDependencyResolver();
+                if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+                {
+                    desktop.MainWindow =
+                        host.Services.GetRequiredService<MainWindow>();
+                }
+
+                base.OnFrameworkInitializationCompleted();
+                
+            }
+        
     }
 }

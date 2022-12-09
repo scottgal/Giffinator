@@ -32,6 +32,8 @@ internal class ThumbnailService
             try
             {
                 img = await Image.LoadAsync(fs, token);
+                //Only want animated GIFs.
+                if (img.Frames.Count == 0) return;
                 {
                     img.Mutate(x => x.Resize(128, 0));
                     var encoder = new GifEncoder()
