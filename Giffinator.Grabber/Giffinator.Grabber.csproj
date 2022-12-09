@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Giffinator.Grabber-55D2FCC0-3C5A-4782-A5C4-F166E0F5CCD2</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Mastodon.Net" Version="1.0.12" />
+        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+        <PackageReference Include="SQLite" Version="3.13.0" />
+    </ItemGroup>
+</Project>

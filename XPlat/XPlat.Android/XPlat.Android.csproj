@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{CA2C7709-7
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giffinator.Grabber", "Giffinator.Grabber\Giffinator.Grabber.csproj", "{CEE21C69-3192-4F30-9DDA-877E21557A37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giffinator.Shared", "Giffinator.Shared\Giffinator.Shared.csproj", "{496A26D9-2EAF-4584-9D01-6BC1E2CCFBB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{2851AE7B-7D67-49D9-8EB9-BD3436E22688}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2851AE7B-7D67-49D9-8EB9-BD3436E22688}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2851AE7B-7D67-49D9-8EB9-BD3436E22688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE21C69-3192-4F30-9DDA-877E21557A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE21C69-3192-4F30-9DDA-877E21557A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE21C69-3192-4F30-9DDA-877E21557A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE21C69-3192-4F30-9DDA-877E21557A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496A26D9-2EAF-4584-9D01-6BC1E2CCFBB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496A26D9-2EAF-4584-9D01-6BC1E2CCFBB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496A26D9-2EAF-4584-9D01-6BC1E2CCFBB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496A26D9-2EAF-4584-9D01-6BC1E2CCFBB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

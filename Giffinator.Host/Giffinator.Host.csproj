@@ -8,10 +8,13 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.0" />
+        <PackageReference Include="SQLite" Version="3.13.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Giffinator.Shared\Giffinator.Shared.csproj" />
       <ProjectReference Include="..\XPlat\XPlat\XPlat.csproj" />
     </ItemGroup>
 
